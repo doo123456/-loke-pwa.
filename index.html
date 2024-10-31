@@ -1,25 +1,48 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>LOKE Support PWA</title>
-    <link rel="manifest" href="manifest.json">
-  </head>
-  <body>
+<body>
     <h1>Welcome to Smart Assistant!</h1>
     <p>For quick access, add this page to your home screen:</p>
     <p><strong>iPhone:</strong> Tap the Share icon and select "Add to Home Screen".<br>
        <strong>Android:</strong> Tap the menu and select "Add to Home Screen".</p>
 
+    <!-- Pop-up container for the LOKE Support link -->
+    <div id="popup" style="
+        display: none; 
+        position: fixed; 
+        bottom: 20px; 
+        right: 20px; 
+        background-color: #333; 
+        color: white; 
+        padding: 15px; 
+        border-radius: 8px; 
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.2); 
+        text-align: center;">
+        <p style="margin: 0;">Need Help? 
+            <a href="https://support.loke.global/hc/en-us/articles/11007371720079--Smart-Assistant" 
+               target="_blank" style="color: #1E90FF; text-decoration: none; font-weight: bold;">
+                Visit LOKE Support
+            </a>
+        </p>
+        <button onclick="closePopup()" style="
+            margin-top: 10px;
+            background-color: #1E90FF; 
+            color: white; 
+            border: none; 
+            padding: 8px 12px; 
+            cursor: pointer; 
+            border-radius: 4px;">
+            Close
+        </button>
+    </div>
+
     <script>
-        // Check if the app is not already installed (only works on some browsers)
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('beforeinstallprompt', (e) => {
-                // Prevent the default mini-infobar from appearing
-                e.preventDefault();
-                // Show custom message
-                alert("For easy access, add this page to your home screen!");
-            });
+        // Function to show the pop-up on page load
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'block';
+        };
+
+        // Function to close the pop-up
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
         }
     </script>
-  </body>
-</html>
+</body>
