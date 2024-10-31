@@ -1,10 +1,5 @@
 <body>
-    <h1>Welcome to Smart Assistant!</h1>
-    <p>For quick access, add this page to your home screen:</p>
-    <p><strong>iPhone:</strong> Tap the Share icon and select "Add to Home Screen".<br>
-       <strong>Android:</strong> Tap the menu and select "Add to Home Screen".</p>
-
-    <!-- Pop-up container for the LOKE Support link -->
+    <!-- Pop-up container for the add-to-home screen prompt -->
     <div id="popup" style="
         display: none; 
         position: fixed; 
@@ -15,19 +10,25 @@
         padding: 15px; 
         border-radius: 8px; 
         box-shadow: 0px 4px 8px rgba(0,0,0,0.2); 
-        text-align: center;">
-        <p style="margin: 0;">Need Help? 
-            <a href="https://support.loke.global/hc/en-us/articles/11007371720079--Smart-Assistant" 
-               target="_blank" style="color: #1E90FF; text-decoration: none; font-weight: bold;">
-                Visit LOKE Support
-            </a>
-        </p>
-        <button onclick="closePopup()" style="
+        text-align: center; 
+        width: 250px;">
+        <p style="margin: 0; font-weight: bold;">Welcome to LOKE Smart Assistant</p>
+        <button onclick="showInstructions()" style="
             margin-top: 10px;
             background-color: #1E90FF; 
             color: white; 
             border: none; 
             padding: 8px 12px; 
+            cursor: pointer; 
+            border-radius: 4px;">
+            Click here to add to your home screen
+        </button>
+        <button onclick="closePopup()" style="
+            margin-top: 5px;
+            background-color: #555; 
+            color: white; 
+            border: none; 
+            padding: 5px 10px; 
             cursor: pointer; 
             border-radius: 4px;">
             Close
@@ -43,6 +44,13 @@
         // Function to close the pop-up
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
+        }
+
+        // Function to show add-to-home screen instructions
+        function showInstructions() {
+            alert("To add this app to your home screen:\n\n" +
+                  "iPhone: Tap the 'Share' icon at the bottom of the screen, then select 'Add to Home Screen'.\n\n" +
+                  "Android: Tap the menu (three dots) in the upper-right corner, then select 'Add to Home Screen'.");
         }
     </script>
 </body>
