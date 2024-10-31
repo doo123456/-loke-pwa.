@@ -1,62 +1,69 @@
-<body>
-    <!-- Centered and larger pop-up container with dark blue background -->
-    <div id="popup" style="
-        display: none; 
-        position: fixed; 
-        top: 50%; 
-        left: 50%; 
-        transform: translate(-50%, -50%); 
-        background-color: #001f3f; /* Dark blue background */
-        color: white; 
-        padding: 30px; 
-        width: 80%; 
-        max-width: 400px;
-        border-radius: 10px; 
-        box-shadow: 0px 8px 16px rgba(0,0,0,0.3); 
+<body style="margin: 0;">
+    <!-- Full-screen dark overlay -->
+    <div id="overlay" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 15, 45, 0.9); /* Dark blue with transparency */
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        font-size: 1.2em;">
-        <p style="margin: 0; font-weight: bold; font-size: 1.5em;">Welcome to LOKE Smart Assistant</p>
-        <p style="margin: 20px 0;">Click the button below to visit the Smart Assistant page and add it to your home screen:</p>
-        <a href="https://support.loke.global/hc/en-us/articles/11007371720079--Smart-Assistant" 
-           target="_blank" style="
-           display: inline-block;
-           margin-top: 10px;
-           background-color: #1E90FF; 
-           color: white; 
-           text-decoration: none;
-           padding: 12px 20px; 
-           border-radius: 6px; 
-           font-weight: bold;
-           font-size: 1em;">
-            Visit Smart Assistant
-        </a>
-        <p style="margin-top: 20px; font-size: 0.9em;">To add this app to your home screen:<br>
-            <strong>iPhone:</strong> Tap the 'Share' icon, then select 'Add to Home Screen'.<br>
-            <strong>Android:</strong> Tap the menu (three dots), then select 'Add to Home Screen'.
-        </p>
-        <button onclick="closePopup()" style="
-            margin-top: 15px;
-            background-color: #555; 
-            color: white; 
-            border: none; 
-            padding: 10px 15px; 
-            cursor: pointer; 
-            border-radius: 6px;
-            font-size: 1em;">
-            Close
-        </button>
+        font-size: 1.2em;
+        z-index: 1000;">
+        <div style="
+            padding: 30px;
+            max-width: 400px;
+            border-radius: 10px;">
+            <p style="margin: 0; font-weight: bold; font-size: 1.5em;">Welcome to LOKE Smart Assistant</p>
+            <p style="margin: 20px 0;">Click the button below to learn how to add this app to your home screen:</p>
+            <button onclick="showInstructions()" style="
+                background-color: #1E90FF; 
+                color: white; 
+                border: none; 
+                padding: 12px 20px; 
+                border-radius: 6px; 
+                font-weight: bold;
+                font-size: 1em;
+                cursor: pointer;">
+                How to Add to Home Screen
+            </button>
+            <p id="instructions" style="display: none; margin-top: 20px; font-size: 1em;">
+                <strong>For iPhone:</strong> Tap the "Share" icon and select "Add to Home Screen".<br>
+                <strong>For Android:</strong> Tap the menu (three dots) and select "Add to Home Screen".
+            </p>
+            <button onclick="closePopup()" style="
+                margin-top: 20px;
+                background-color: #555; 
+                color: white; 
+                border: none; 
+                padding: 10px 15px; 
+                cursor: pointer; 
+                border-radius: 6px;
+                font-size: 1em;">
+                Close
+            </button>
+        </div>
     </div>
 
     <script>
-        // Function to show the pop-up on page load
+        // Show the overlay on page load
         window.onload = function() {
-            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'flex';
         };
 
-        // Function to close the pop-up
+        // Function to show instructions
+        function showInstructions() {
+            document.getElementById('instructions').style.display = 'block';
+        }
+
+        // Function to close the overlay
         function closePopup() {
-            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
         }
     </script>
 </body>
-
