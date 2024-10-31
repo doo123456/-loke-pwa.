@@ -1,21 +1,22 @@
 <body>
-    <!-- Pop-up container for add-to-home screen prompt -->
+    <!-- Centered and larger pop-up container with dark blue background -->
     <div id="popup" style="
         display: none; 
         position: fixed; 
-        bottom: 10%; 
+        top: 50%; 
         left: 50%; 
-        transform: translate(-50%, 0); 
-        background-color: #333; 
+        transform: translate(-50%, -50%); 
+        background-color: #001f3f; /* Dark blue background */
         color: white; 
-        padding: 20px; 
-        max-width: 90%; 
-        border-radius: 8px; 
-        box-shadow: 0px 4px 8px rgba(0,0,0,0.2); 
+        padding: 30px; 
+        width: 80%; 
+        max-width: 400px;
+        border-radius: 10px; 
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.3); 
         text-align: center;
-        font-size: 1.1em;">
-        <p style="margin: 0; font-weight: bold;">Welcome to LOKE Smart Assistant</p>
-        <p style="margin: 10px 0;">Click the button below to visit our support page and add to your home screen:</p>
+        font-size: 1.2em;">
+        <p style="margin: 0; font-weight: bold; font-size: 1.5em;">Welcome to LOKE Smart Assistant</p>
+        <p style="margin: 20px 0;">Click the button below to visit the Smart Assistant page and add it to your home screen:</p>
         <a href="https://support.loke.global/hc/en-us/articles/11007371720079--Smart-Assistant" 
            target="_blank" style="
            display: inline-block;
@@ -23,23 +24,25 @@
            background-color: #1E90FF; 
            color: white; 
            text-decoration: none;
-           padding: 10px 15px; 
-           border-radius: 4px; 
-           font-weight: bold;">
-            Visit LOKE Support
+           padding: 12px 20px; 
+           border-radius: 6px; 
+           font-weight: bold;
+           font-size: 1em;">
+            Visit Smart Assistant
         </a>
-        <p style="margin-top: 15px;">To add this app to your home screen:<br>
+        <p style="margin-top: 20px; font-size: 0.9em;">To add this app to your home screen:<br>
             <strong>iPhone:</strong> Tap the 'Share' icon, then select 'Add to Home Screen'.<br>
             <strong>Android:</strong> Tap the menu (three dots), then select 'Add to Home Screen'.
         </p>
         <button onclick="closePopup()" style="
-            margin-top: 10px;
+            margin-top: 15px;
             background-color: #555; 
             color: white; 
             border: none; 
-            padding: 8px 12px; 
+            padding: 10px 15px; 
             cursor: pointer; 
-            border-radius: 4px;">
+            border-radius: 6px;
+            font-size: 1em;">
             Close
         </button>
     </div>
