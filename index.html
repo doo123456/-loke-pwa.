@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LOKE Support PWA</title>
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <h1>Welcome to Smart Assistant!</h1>
+    <p>For quick access, add this page to your home screen:</p>
+    <p><strong>iPhone:</strong> Tap the Share icon and select "Add to Home Screen".<br>
+       <strong>Android:</strong> Tap the menu and select "Add to Home Screen".</p>
+
+    <script>
+        // Check if the app is not already installed (only works on some browsers)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('beforeinstallprompt', (e) => {
+                // Prevent the default mini-infobar from appearing
+                e.preventDefault();
+                // Show custom message
+                alert("For easy access, add this page to your home screen!");
+            });
+        }
+    </script>
+  </body>
+</html>
