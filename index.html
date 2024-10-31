@@ -1,34 +1,43 @@
 <body>
-    <!-- Pop-up container for the add-to-home screen prompt -->
+    <!-- Pop-up container for add-to-home screen prompt -->
     <div id="popup" style="
         display: none; 
         position: fixed; 
-        bottom: 20px; 
-        right: 20px; 
+        bottom: 10%; 
+        left: 50%; 
+        transform: translate(-50%, 0); 
         background-color: #333; 
         color: white; 
-        padding: 15px; 
+        padding: 20px; 
+        max-width: 90%; 
         border-radius: 8px; 
         box-shadow: 0px 4px 8px rgba(0,0,0,0.2); 
-        text-align: center; 
-        width: 250px;">
+        text-align: center;
+        font-size: 1.1em;">
         <p style="margin: 0; font-weight: bold;">Welcome to LOKE Smart Assistant</p>
-        <button onclick="showInstructions()" style="
-            margin-top: 10px;
-            background-color: #1E90FF; 
-            color: white; 
-            border: none; 
-            padding: 8px 12px; 
-            cursor: pointer; 
-            border-radius: 4px;">
-            Click here to add to your home screen
-        </button>
+        <p style="margin: 10px 0;">Click the button below to visit our support page and add to your home screen:</p>
+        <a href="https://support.loke.global/hc/en-us/articles/11007371720079--Smart-Assistant" 
+           target="_blank" style="
+           display: inline-block;
+           margin-top: 10px;
+           background-color: #1E90FF; 
+           color: white; 
+           text-decoration: none;
+           padding: 10px 15px; 
+           border-radius: 4px; 
+           font-weight: bold;">
+            Visit LOKE Support
+        </a>
+        <p style="margin-top: 15px;">To add this app to your home screen:<br>
+            <strong>iPhone:</strong> Tap the 'Share' icon, then select 'Add to Home Screen'.<br>
+            <strong>Android:</strong> Tap the menu (three dots), then select 'Add to Home Screen'.
+        </p>
         <button onclick="closePopup()" style="
-            margin-top: 5px;
+            margin-top: 10px;
             background-color: #555; 
             color: white; 
             border: none; 
-            padding: 5px 10px; 
+            padding: 8px 12px; 
             cursor: pointer; 
             border-radius: 4px;">
             Close
@@ -44,13 +53,6 @@
         // Function to close the pop-up
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
-        }
-
-        // Function to show add-to-home screen instructions
-        function showInstructions() {
-            alert("To add this app to your home screen:\n\n" +
-                  "iPhone: Tap the 'Share' icon at the bottom of the screen, then select 'Add to Home Screen'.\n\n" +
-                  "Android: Tap the menu (three dots) in the upper-right corner, then select 'Add to Home Screen'.");
         }
     </script>
 </body>
